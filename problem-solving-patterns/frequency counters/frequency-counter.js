@@ -14,7 +14,6 @@
 
   Time complexity is O(N^2)
   indexOf() in background just use for loop, so basically have two nested for loops
-  Good way to improve performance is to remove element if you can, once you find it (line 30: [ arr2.splice(index, 1); ])
  */
 function same(arr1, arr2) {
     if (arr1.length !== arr2.length) {
@@ -76,5 +75,4 @@ console.timeEnd('sameRefactored');
     End result with 4 elements
     1. same:  0.103ms
     2. sameRefactored: 0.060ms
-
  */
