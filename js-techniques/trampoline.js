@@ -1,9 +1,9 @@
-const a = x => {
+const func = x => {
     if(x > 500000) {
         console.log(x);
         return;
     }
-    return ()=> a(x + 1); // you return a function, it hasn't been called yet
+    return ()=> func(x + 1); // you return a function, it hasn't been called yet
 };
 
 const trampoline = fn => (...args) => {
@@ -16,5 +16,5 @@ const trampoline = fn => (...args) => {
     return result;
 };
 
-const t = trampoline(a);
-t(1);
+const temp = trampoline(func);
+temp(1);

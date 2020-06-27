@@ -73,6 +73,18 @@ another function (e.q IIFE)
 
 # Trampoline 
 
+A trampoline function basically wraps our recursive function in a loop.
+Under the hood, it calls the recursive function piece by piece until it no longer produces recursive calls.
+What’s happening under the hood of this `trampoline` function?
+It takes a function `(fn)` as its argument—this is the recursive function it is going to wrap—and
+returns a new function. Within this new function, the recursive function is called.
+We keep the loop running as long as `fn `returns another function.
+Once `fn` resolves into a value, we stop running the loop and return the value.
+
+Since our recursive function now returns a new function without actually calling itself yet,
+we get to control when the next call to `func` happens inside our `trampoline` function.
+This allows us to continue calling `func` without blowing up the call stack.
+
 #### PTC or Proper Tail Calls
  
 #### TCO or Tail Calls Optimizations
