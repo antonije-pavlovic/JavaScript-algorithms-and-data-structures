@@ -44,7 +44,11 @@ alert( pow(2, 3) ); // 8
 > In our case, it will be exactly `n`.The maximal `recursion depth` is limited by JavaScript engine.
 > We can rely on it being 10000, some engines allow more, but 100000 is probably out of limit for the majority of them.
 > There are automatic optimizations that help alleviate this (“tail calls optimizations”)
- 
+
+### Two essential parts of a recursive function
+* Base case  (break point, when recursion stops)
+* different input (call function always with different input)
+
 ### The execution context and stack
 
 The information about the process of execution of a running function is stored in its `execution context`.

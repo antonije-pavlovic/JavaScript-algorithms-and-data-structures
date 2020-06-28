@@ -12,7 +12,6 @@ const trampoline = fn => (...args) => {
     while (typeof result === 'function') {
         result = result();
     }
-
     return result;
 };
 
