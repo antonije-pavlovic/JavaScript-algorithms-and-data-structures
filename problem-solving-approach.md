@@ -1,4 +1,4 @@
-#Problem solving
+# Problem solving
 Some tip for solving problems:
 * Devise a plan for solving problems
 * Master common problem solving patterns
