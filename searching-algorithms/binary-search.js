@@ -9,9 +9,12 @@ function binarySearch(array, elem) {
     let middle = Math.floor(( left + right ) / 2);
 
     for (; ;) {
-        if (array[middle] === elem || left >= right) {
+        if (array[middle] === elem) {
+            return middle;
+        } else if (left >= right) {
             break;
         }
+
         if (elem > array[middle]) {
             left = middle + 1;
         } else {
@@ -21,14 +24,10 @@ function binarySearch(array, elem) {
         middle = Math.floor(( left + right ) / 2);
     }
 
-    if (array[middle] === elem) {
-        return middle
-    } else {
-        return -1;
-    }
+    return -1;
 }
 
 
 console.time('binarySearch');
-console.log(binarySearch([ 2, 4, 9, 8, 15, 18, 25, 48, 89, 97, 102 ], 102)); // 6.146ms
+console.log(binarySearch([ 2, 4, 9, 8, 15, 18, 25, 48, 89, 97, 102 ], 4)); // 6.146ms
 console.timeEnd('binarySearch');
