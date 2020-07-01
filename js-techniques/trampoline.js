@@ -3,12 +3,12 @@ const func = x => {
         console.log(x);
         return;
     }
-    return ()=> func(x + 1); // you return a function, it hasn't been called yet
+    return ()=> func(x + 1); // TODO: you return a function, it hasn't been called yet
 };
 
 const trampoline = fn => (...args) => {
     let result = fn(...args);
-    //repeatedly call the function till you hit your base case
+    // TODO: repeatedly call the function till you hit your base case
     while (typeof result === 'function') {
         result = result();
     }

@@ -10,12 +10,12 @@ and divide the search space in half. For Example: `Binary Search`.
 
 <br>
 
-##### Searching Algorithms :
+##### Searching Algorithms:
 1. [Linear Search](#linear-search)
 2. [Binary Search](#binary-search)
-3. Jump Search
+3. [Exponential Search](#exponential-search)
 4. Interpolation Search
-5. Exponential Search
+5. Jump Search
 6. Sublist Search (Search a linked list in another list)
 7. Fibonacci Search
 8. The Ubiquitous Binary Search
@@ -70,3 +70,5 @@ and largest element, that can be performed efficiently on a sorted array.
    * Average case time complexity: `O(log N)`
    * Best case time complexity:` O(1)`
    * Space complexity: `O(log N)`
+
+# Exponential Search

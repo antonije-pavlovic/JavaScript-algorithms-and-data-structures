@@ -9,6 +9,9 @@ Closures are useful because they let you associate data (the lexical environment
 with a function that operates on that data. This has obvious parallels to object-oriented programming,
 where objects allow you to associate data (the object's properties) with one or more methods.
 
+The inner function will have access to the variables in the outer function scope,
+even after the outer function has returned.
+
 Consequently, you can use a closure anywhere that you might normally use an object with only a single method.
 
 #### Closure scope
