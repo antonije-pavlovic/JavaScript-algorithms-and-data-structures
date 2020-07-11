@@ -6,6 +6,7 @@ Built in sort - unicode !! number vs string
 * [Bubble sort](#bubble-sort)
 * [Insertion sort](#insertion-sort)
 * [Merge sort](#merge-sort)
+* [Quick sort](#quick-sort)
 
 # Bubble sort
 
@@ -71,3 +72,34 @@ Merge sort is a divide and conquer algorithm that was invented by **John von Neu
 
 1. Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
 2. Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.
+
+# Quick sort
+Quicksort is a `divide-and-conquer` algorithm. It works by selecting a `pivot` element from the array and
+partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.
+The sub-arrays are then sorted recursively.
+This can be done in-place, requiring small additional amounts of memory to perform the sorting.
+
+Quicksort always go in synonymous with the “most efficient algorithm”. 
+There are two reasons why `quicksort` is so popular,
+
+1. Time Complexity
+The performance of quicksort is in order of `nlogn` for most of the cases.
+If the list of elements is already in sorted order or nearly sorted order then it takes n² comparisons to sort the array.
+
+There are cases where Quicksort performs badly. If the list of elements is already in sorted order or 
+nearly sorted then we might end up in an unbalanced sub-array,
+to an extent where there is no element on the left greater than the pivot, hence on the righ
+
+2. Space complexity
+Quicksort has a space complexity of `O(logn)` even in the worst case when it is carefully implemented such that
+
+---
+>**NOTE:**
+
+Quicksort has one bigger difference with merge sort, and this ends up being a key point between these otherwise 
+similar algorithms. This is the fact that quicksort is an `unstable` algorithm, meaning that it won’t be guaranteed 
+to preserve the order of elements as it reorders; two elements that are exactly the same in the unsorted array 
+could show up in a reversed order in the sorted one! Stability ends up being what causes people to choose
+merge sort over quicksort, and it’s the one area where merge sort appears as the obvious winner.
+
+---

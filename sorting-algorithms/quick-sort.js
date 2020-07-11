@@ -9,7 +9,7 @@ function pivot(array, start = 0, end = array.length - 1) {
         }
     }
 
-    swap(array, start, swapIndex);
+    swap(array,   start, swapIndex);
     return swapIndex
 }
 
