@@ -29,9 +29,7 @@ function same(arr1, arr2) {
     }
     return true;
 }
-console.time('same');
 same([1,2,3,2], [9,1,4,4]);
-console.timeEnd('same');
 
 /**
  *
@@ -68,9 +66,7 @@ function sameRefactored(arr1, arr2) {
     return true;
 }
 
-console.time('sameRefactored');
 sameRefactored([1,2,3,2], [9,1,4,4]);
-console.timeEnd('sameRefactored');
 /**
     End result with 4 elements
     1. same:  0.103ms

@@ -19,6 +19,4 @@ function countUniqueValues(array) {
 
     return  ++j;
 }
-console.time('countUniqueValues');
-console.log(countUniqueValues([ 1, 2, 3, 4, 5, 5, 5, 6, 6, 7 ])); // 7, execution time: 4.853ms
-console.timeEnd('countUniqueValues');
+console.log(countUniqueValues([ 1, 2, 3, 4, 5, 5, 5, 6, 6, 7 ]));

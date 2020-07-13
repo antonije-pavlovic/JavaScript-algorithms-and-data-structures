@@ -28,6 +28,4 @@ function averagePair(array, targetAverage) {
     return false;
 }
 
-console.time('averagePair');
-averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8);  // 0.100ms
-console.timeEnd('averagePair');
+averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8);

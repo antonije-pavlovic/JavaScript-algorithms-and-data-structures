@@ -30,6 +30,4 @@ function isSubsequence(subSequent, lookupString) {
     return false;
 }
 
-console.time('isSubsequence');
-console.log(isSubsequence('hello', 'hell wrld hello')); //  6.261ms
-console.timeEnd('isSubsequence');
+console.log(isSubsequence('hello', 'hell wrld hello'));

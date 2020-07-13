@@ -24,9 +24,7 @@ function sumZeroBadSolutions(array) {
 
     return false;
 }
-console.time('sumZeroBadSolutions');
-sumZeroBadSolutions([2, 4, 3, -1, 9, -2]); // 0.081ms
-console.timeEnd('sumZeroBadSolutions');
+sumZeroBadSolutions([2, 4, 3, -1, 9, -2]);
 
 /**
  *
@@ -48,6 +46,4 @@ function sumZeroGoodSolution(array) {
         }
     }
 }
-console.time('sumZeroGoodSolution');
-sumZeroGoodSolution([2, 4, 3, -1, 9, -2]); // 0.031ms
-console.timeEnd('sumZeroGoodSolution');
+sumZeroGoodSolution([2, 4, 3, -1, 9, -2]);

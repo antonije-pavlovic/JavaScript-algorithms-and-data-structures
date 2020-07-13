@@ -27,7 +27,4 @@ function binarySearch(array, elem) {
     return -1;
 }
 
-
-console.time('binarySearch');
-console.log(binarySearch([ 2, 4, 9, 8, 15, 18, 25, 48, 89, 97, 102 ], 4)); // 6.146ms
-console.timeEnd('binarySearch');
+console.log(binarySearch([ 2, 4, 9, 8, 15, 18, 25, 48, 89, 97, 102 ], 4));

@@ -7,6 +7,4 @@ function countDown(number) {
     countDown(--number);
 }
 
-console.time('countDown');
-countDown(10);          // countDown: 4.690ms
-console.timeEnd('countDown');
+countDown(10);

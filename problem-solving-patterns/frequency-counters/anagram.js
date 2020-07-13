@@ -45,9 +45,7 @@ function anagramFirstSolution(firstWord, secondWord) {
 
 }
 
-console.time('anagram');
-anagramFirstSolution('anagram', 'nagara');    //   0.219ms
-console.timeEnd('anagram');
+anagramFirstSolution('anagram', 'nagara');
 
 /**
  *  MUCH FASTER WAY
@@ -76,6 +74,4 @@ function anagramSecondSolution(firstWord, secondWord) {
     return true;
 }
 
-console.time('anagram second');
-anagramSecondSolution('anagram', 'nagara');    //   0.059ms
-console.timeEnd('anagram second');
+anagramSecondSolution('anagram', 'nagara');
