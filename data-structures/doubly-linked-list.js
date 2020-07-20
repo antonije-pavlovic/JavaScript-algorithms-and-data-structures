@@ -78,7 +78,6 @@ class DoublyLinkedList {
 
     /**
      * Add node to the beginning of the list
-     * @param value
      */
     unshift(value) {
         const newNode = new Node(value);
@@ -152,17 +151,17 @@ class DoublyLinkedList {
      *  Adding a node in list by a certain position
      */
     insert(value, position) {
-        if(!this.length) {
+        if (!this.length) {
             return false;
         }
 
-        if(position < 0 || position > this.length) {
+        if (position < 0 || position > this.length) {
             return false;
         }
 
-        if(position === 0) {
+        if (position === 0) {
             return this.unshift(value);
-        }else if(position === this.length) {
+        } else if (position === this.length) {
             return this.push(value);
         } else {
             const newNode = new Node(value);
@@ -182,4 +181,47 @@ class DoublyLinkedList {
 
         return true;
     }
+
+    /**
+     * Removing node in the list by a certain position
+     */
+    remove(position) {
+        if(!this.length) {
+            return false;
+        }
+
+        if(position < 0 || position >= this.length) {
+            return false
+        }
+        if(position === 0) {
+            return this.shift()
+        }
+
+        if(position === this.length - 1) {
+            return this.pop();
+        }
+
+        const targetNode = this.get(position);
+        const previous = targetNode.previous;
+        const following = targetNode.next;
+
+        previous.next = following;
+        following.previous = previous;
+
+        targetNode.next = null;
+        targetNode.previous = null;
+        this.length--;
+
+        return true;
+    }
 }
+
+const list = new DoublyLinkedList();
+
+list.push(1);
+list.push(2);
+list.push(3);
+list.push(4);
+
+list.remove(1);
+console.log(list);
