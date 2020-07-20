@@ -214,14 +214,18 @@ class DoublyLinkedList {
 
         return true;
     }
+
+    /**
+     *  Print all nodes in the list
+     */
+    print() {
+        const arr = [];
+        let node = this.head;
+        for(let i = 0; i < this.length; i++) {
+            arr.push(node);
+            node = node.next;
+        }
+        console.log(arr);
+    }
 }
 
-const list = new DoublyLinkedList();
-
-list.push(1);
-list.push(2);
-list.push(3);
-list.push(4);
-
-list.remove(1);
-console.log(list);
