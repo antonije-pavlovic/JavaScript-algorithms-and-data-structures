@@ -5,13 +5,7 @@ class Node {
     }
 }
 
-/**
- * NOTE: This in in case when implementation of stack is using singly linked list
- * (in doubly linked list we have previous pointer so we can easily access to before last node)
- *
- *  Add and remove on beginning of the list we are getting constant time, other way we need to iterate throw whole list to get to end
- */
-class Stack {
+class Queue {
     constructor(maxSize) {
         this.first = null;
         this.last = null;
@@ -20,36 +14,36 @@ class Stack {
     }
 
     /**
-     * Adding new node
+     *  Add on the end of queue
      */
-    push(value) {
-        if(this.size >= this.maxSize) {
-            return 'Stack is full';
+    enqueue(value) {
+        if (this.size >= this.maxSize) {
+            return 'Queue is full';
         }
-
         const newNode = new Node(value);
 
-        if(!this.size) {
+        if (!this.size) {
             this.first = newNode;
             this.last = newNode;
         } else {
-            newNode.next = this.first;
-            this.first = newNode
+            this.last.next = newNode;
+            this.last = newNode;
         }
 
-        return ++this.size;
+        this.size++;
+        return newNode;
     }
 
     /**
-     * Remove last added node
+     * Remove element from the beginning of the queue
      */
-    pop(){
-        if(!this.size) {
+    dequeue() {
+        if (!this.size) {
             return false;
         }
 
         const removed = this.first;
-        if(this.size === 1) {
+        if (this.size === 1) {
             this.last = null;
             this.first = null;
         } else {
@@ -57,7 +51,6 @@ class Stack {
         }
 
         this.size--;
-
         return removed;
     }
 
@@ -82,9 +75,7 @@ class Stack {
         if (!this.size) {
             return false;
         } else {
-            return this.last.value;
+            return this.first.value;
         }
     }
 }
-
-

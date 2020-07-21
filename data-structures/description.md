@@ -63,3 +63,40 @@ Real life examples:
 1. Managing functions invocations
 2. Undo / Redo
 3. Routing (the history object is treated like stack in many frameworks React, etc,)
+
+
+#  Queues
+
+Queue is an abstract data structure, somewhat similar to Stacks.
+Unlike stacks, a queue is open at both its ends. One end is always used
+to insert data (enqueue) and the other is used to remove data (dequeue).
+Queue follows `First-In-First-Out` methodology, i.e., the data item stored
+first will be accessed first.
+
+Real life examples of queue are:
+
+1. A queue of people at ticket-window: The person who comes first gets the ticket first.
+The person who is coming last is getting the tickets in last.
+Therefore, it follows first-in-first-out (FIFO) strategy of queue.
+
+2. Vehicles on toll-tax bridge: The vehicle that comes first to the toll tax booth
+leaves the booth first. The vehicle that comes last leaves last. Therefore,
+it follows first-in-first-out (FIFO) strategy of queue.
+
+3. Phone answering system: The person who calls first gets a response first
+from the phone answering system. The person who calls last gets the response last.
+Therefore, it follows first-in-first-out (FIFO) strategy of queue.
+
+4. Luggage checking machine: Luggage checking machine checks the luggage first that comes first.
+Therefore, it follows FIFO principle of queue.
+
+5. Patients waiting outside the doctor's clinic: The patient who comes first visits
+the doctor first, and the patient who comes last visits the doctor last. Therefore,
+it follows the first-in-first-out (FIFO) strategy of queue.
+
+### Big O
+
+ - Insert: `O(1)`
+ - Delete: `O(1)`
+ - Space: `O(n)`
+ - Search: `O(n)`
