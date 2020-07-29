@@ -4,7 +4,6 @@ class Node {
         this.next = null;
     }
 }
-
 class Queue {
     constructor(maxSize) {
         this.first = null;
