@@ -65,7 +65,6 @@ class BinarySearchTree {
         }
     }
 
-
     breadthFirstTraversal() {
         const data = [];
         let node = this.root;
