@@ -94,12 +94,3 @@ class HashTable {
         return values;
     }
 }
-
-const hash = new HashTable();
-
-hash.set("yellow", 10);
-hash.set("cyan", 15);
-hash.set("cyan ", 12);
-hash.set("cao", 15);
-
-console.log(hash.values());

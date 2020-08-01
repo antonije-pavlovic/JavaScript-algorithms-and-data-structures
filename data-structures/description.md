@@ -100,3 +100,47 @@ it follows the first-in-first-out (FIFO) strategy of queue.
  - Delete: `O(1)`
  - Space: `O(n)`
  - Search: `O(n)`
+
+#  Hash table
+
+A `hash table` (also called a `hash`, `hash map`,`unordered map` or `dictionary`) is a data structure that pairs keys to values.
+Its a technique to convert a range of key values into a range of indexes of an array.
+Its used to implement an associative array, a structure that can map keys to values.
+A Hash Table uses a hash function to compute an index into an array of buckets or slots,
+from which the desired value can be found.
+
+#### Hash table operations are performed in two steps:
+ * A key is converted into an integer index by using a hash function.
+ * This index decides the where the key-value pair record belongs.
+
+Real life examples:
+
+1. Number of occurrences of each word in a book
+2. Finding number of unique words
+3. Given a log containing UserId, ProcessId, starTime, endTime and resource consumption, finding user with highest resource consumption
+4. In a compiler, a hash table will likely be used for keyword and identifier storage because a compiler needs quick access to this information
+
+
+Although hash tables provide fast insertion, deletion, and retrieval,
+they perform poorly for operations that involve searching, such as finding the minimum and maximum values in a data set.
+For these operations, other data structures such as the binary search tree are more appropriate.
+
+> **_NOTE:_**
+The Hash-function takes a key and converts it to a number which will be the index at which to store it.
+>In my _hash() function below, I am computing a hash value by summing the ASCII value of each character of the string
+>(the argument passed-in) using the JavaScript function charCodeAt() to return a character’s ASCII value after
+> multiplying the ASCII value by a multiplier PRIME, which in this case, is an odd prime 31.
+>And the reason to choose 31 being, by some empirical research,
+> if we take over 50,000 English words (formed as the union of the word lists provided in two variants of Unix),
+>using the constants 31, 33, 37, 39, and 41 will produce less than 7 collisions in each case,
+>while creating a hashing function
+
+#### Collision-Resolution
+Even with an efficient hash function, it is possible for two keys to hash (the result of the hash function)
+to the same value. This is called a `collision`, and we need a strategy for handling collisions when they occur.
+
+ And this can be done in two ways - `separate chaining` and `linear probing `
+
+#### **Hash vs Objects in JavaScript**
+Fundamentally, every object in JavaScript IS a hash. This is a hash of object’s properties and methods.
+Every time I call object’s method, property, or just reference any variable, I perform an internal hash lookup
