@@ -62,21 +62,21 @@ class Stack {
     }
 
     /**
-     * Checks if the queue is full.
+     * Checks if the stack is full.
      */
     isFull() {
         return this.size >= this.maxSize;
     }
 
     /**
-     * Checks if the queue is empty.
+     * Checks if the stack is empty.
      */
     isEmpty() {
         return this.size === 0;
     }
 
     /**
-     * Gets the element at the front of the queue without removing it.
+     * Gets the element at the top of the stack without removing it.
      */
     peek() {
         if (!this.size) {

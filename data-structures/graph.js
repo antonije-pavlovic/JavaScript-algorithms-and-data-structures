@@ -43,7 +43,7 @@ class Graph {
     }
 
     removeVertex(vertex) {
-        if(!this.adjancencyList[vertex]) {
+        if (!this.adjancencyList[vertex]) {
             return false;
         }
         const targetVertex = this.adjancencyList[vertex];
@@ -54,5 +54,81 @@ class Graph {
 
         delete this.adjancencyList[vertex];
     }
-}
 
+    depthFirstRecursive(start) {
+        const result = [];
+        const visited = {};
+        const that = this;
+
+        function traverse(vertex) {
+            if (!vertex) {
+                return false;
+            }
+            visited[vertex] = true;
+            result.push(vertex);
+            const targetVertex = that.adjancencyList[vertex];
+
+            for (let i = 0 ; i < targetVertex.length ; i++) {
+                if (!visited[targetVertex[i]]) {
+                    traverse(targetVertex[i])
+                }
+            }
+        }
+
+        traverse(start);
+        return result;
+    }
+
+    /**
+     * good to use stack instead of array
+     */
+    depthFirstIterative(start) {
+        const visited = {};
+        const result = [];
+        let currentVertex;
+
+        const stack = [start];
+        visited[start] = true;
+
+        while(stack.length) {
+            currentVertex = stack.pop();
+            result.push(currentVertex);
+
+            const neighbors = this.adjancencyList[currentVertex];
+            for(let i = 0; i < neighbors.length; i++) {
+                if(!visited[neighbors[i]]) {
+                    visited[neighbors[i]] = true;
+                    stack.push(neighbors[i]);
+                }
+            }
+        }
+        return result;
+    }
+
+    /**
+     * good to use queue instead of array
+     */
+    breadthFirst(start) {
+        const result =[];
+        const visited = {};
+        const queue = [];
+        let currentVertex;
+
+        queue.push(start);
+        visited[start] = true;
+
+        while(queue.length) {
+            currentVertex = queue.shift();
+            result.push(currentVertex);
+
+            const neighbors = this.adjancencyList[currentVertex];
+            for(let i = 0; i < neighbors.length; i++) {
+                if(!visited[neighbors[i]]) {
+                    visited[neighbors[i]] = true;
+                    queue.push(neighbors[i]);
+                }
+            }
+        }
+        return result;
+    }
+}
