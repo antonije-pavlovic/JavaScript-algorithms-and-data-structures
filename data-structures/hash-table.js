@@ -1,5 +1,5 @@
 class HashTable {
-    constructor(size = 53) {
+    constructor(size = 100) {
         this.keyMap = new Array(size);
     }
 
@@ -65,7 +65,6 @@ class HashTable {
                     keys.push(subArray[j][0]);
                 }
             }
-
         }
 
         return keys;
