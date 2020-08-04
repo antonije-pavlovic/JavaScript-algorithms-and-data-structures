@@ -1,37 +1,37 @@
 class Graph {
     constructor() {
-        this.adjancencyList = {};
+        this.adjacencyList = {};
     }
 
     addVertex(name) {
-        if (!this.adjancencyList[name]) {
-            this.adjancencyList[name] = [];
+        if (!this.adjacencyList[name]) {
+            this.adjacencyList[name] = [];
         }
     }
 
     addEdge(vertex1, vertex2) {
-        if (!this.adjancencyList[vertex1] || !this.adjancencyList[vertex2]) {
+        if (!this.adjacencyList[vertex1] || !this.adjacencyList[vertex2]) {
             return false;
         }
-        this.adjancencyList[vertex1].push(vertex2);
-        this.adjancencyList[vertex2].push(vertex1);
+        this.adjacencyList[vertex1].push(vertex2);
+        this.adjacencyList[vertex2].push(vertex1);
     }
 
     removeEdge(vertex1, vertex2) {
-        if (!this.adjancencyList[vertex1] || !this.adjancencyList[vertex2]) {
+        if (!this.adjacencyList[vertex1] || !this.adjacencyList[vertex2]) {
             return false;
         }
         // vertex 1
-        const vertex1Arr = this.adjancencyList[vertex1];
+        const vertex1Arr = this.adjacencyList[vertex1];
         const vertex1NewArr = [];
         for (let i = 0 ; i < vertex1Arr.length ; i++) {
             if (vertex1Arr[i] !== vertex2) {
                 vertex1NewArr.push(vertex1Arr[i]);
             }
         }
-        this.adjancencyList[vertex1] = vertex1NewArr;
+        this.adjacencyList[vertex1] = vertex1NewArr;
         // vertex 2
-        const vertex2Arr = this.adjancencyList[vertex2];
+        const vertex2Arr = this.adjacencyList[vertex2];
         const vertex2NewArr = [];
 
         for (let i = 0 ; i < vertex2Arr.length ; i++) {
@@ -39,20 +39,20 @@ class Graph {
                 vertex2NewArr.push(vertex2Arr[i]);
             }
         }
-        this.adjancencyList[vertex2] = vertex2NewArr
+        this.adjacencyList[vertex2] = vertex2NewArr
     }
 
     removeVertex(vertex) {
-        if (!this.adjancencyList[vertex]) {
+        if (!this.adjacencyList[vertex]) {
             return false;
         }
-        const targetVertex = this.adjancencyList[vertex];
+        const targetVertex = this.adjacencyList[vertex];
 
         for (let i = 0 ; i < targetVertex.length ; i++) {
             this.removeEdge(vertex, targetVertex[i]);
         }
 
-        delete this.adjancencyList[vertex];
+        delete this.adjacencyList[vertex];
     }
 
     depthFirstRecursive(start) {
@@ -66,7 +66,7 @@ class Graph {
             }
             visited[vertex] = true;
             result.push(vertex);
-            const targetVertex = that.adjancencyList[vertex];
+            const targetVertex = that.adjacencyList[vertex];
 
             for (let i = 0 ; i < targetVertex.length ; i++) {
                 if (!visited[targetVertex[i]]) {
@@ -94,7 +94,7 @@ class Graph {
             currentVertex = stack.pop();
             result.push(currentVertex);
 
-            const neighbors = this.adjancencyList[currentVertex];
+            const neighbors = this.adjacencyList[currentVertex];
             for(let i = 0; i < neighbors.length; i++) {
                 if(!visited[neighbors[i]]) {
                     visited[neighbors[i]] = true;
@@ -121,7 +121,7 @@ class Graph {
             currentVertex = queue.shift();
             result.push(currentVertex);
 
-            const neighbors = this.adjancencyList[currentVertex];
+            const neighbors = this.adjacencyList[currentVertex];
             for(let i = 0; i < neighbors.length; i++) {
                 if(!visited[neighbors[i]]) {
                     visited[neighbors[i]] = true;
